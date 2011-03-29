@@ -1,0 +1,27 @@
+
+<a name="item{ITEM_ID_HEX}"></a>
+  <table class="li">
+    <tbody>
+      <tr>
+        <td class="pic p140 lt"><a href="#" class="x140 img"><img class="img" src=
+        "<%=item.galleryURL%>" alt="Item image" /></a></td>
+
+        <td class="dtl ttl"><a href="http://cgi.ebay.com/<%=item.title[0]%>/<%=item.itemId[0]%>"
+        class="vip"><%= item.title%></a></td>
+
+        <td class="trs"><% if(item.sellerInfo[0].topRatedSeller[0] == 'true') { %>
+             <img src= "http://p.ebaystatic.com/aw/pics/icons/iconTrsXSmall.gif"
+                  alt="Get fast shipping and excellent service when you buy from eBay Top-rated sellers"
+                  height="30" width="66" />
+        <% } %></td>
+
+        <td class="bids bin1"><%= item.sellingStatus[0].bidCount%> Bids</td>
+
+        <td class="prc g-b"><%= item.sellingStatus[0].currentPrice[0].__value__ %></td>
+
+        <td class="tme rt"><b class="hidlb">Time left:</b> <span class=
+        "{ALERT_OR_NOT}"><%=formatter.getTimeLeft(item)%></span></td>
+      </tr>
+    </tbody>
+  </table>
+

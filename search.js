@@ -36,7 +36,7 @@ app.get('/', function(req, res) {
       'keywords=' + req.param('_nkw') + '&paginationInput.entriesPerPage=50&' +
       'outputSelector%280%29=SellerInfo&outputSelector%281%29=CategoryHistogram';
 
-    var useProxy = true;
+    var useProxy = false;
     var host = useProxy ? 'localhost' : 'svcs.ebay.com';
     var port = useProxy ? 8080 : 80;
     var realPath = useProxy ? 'http://svcs.ebay.com' + path : path;

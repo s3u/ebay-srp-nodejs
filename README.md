@@ -10,7 +10,10 @@ To run this app:
 * npm install ejs
 * npm install cluster
 * cd to whereever you cloned this repo
+* mkdir logs
+* mkdir pids
 * NODE_ENV=production node search.js
+* Hit http://localhost:3000
 
 If you want to suggest tweaks/fixes to the app, please fork the repo, make changes, and send a pull request.
 

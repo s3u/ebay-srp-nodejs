@@ -1,6 +1,5 @@
-var sys = require('sys');
 var http = require('http');
-var formatter = require('lib/formatter');
+var formatter = require('./lib/formatter');
 
 var app = require('express').createServer();
 app.register('.html', require('ejs'));
@@ -69,12 +68,11 @@ app.get('/', function(req, res) {
 
 // Start a cluster
 // app.listen(3000);
-var cluster = require('cluster');
-cluster(app)
-    .use(cluster.logger('logs'))
-    .use(cluster.stats())
-    .use(cluster.pidfiles('pids'))
-    .use(cluster.cli())
-    .use(cluster.repl(8888))
-    .listen(3000);
 
+var cluster2 = require('cluster2');
+cluster2.listen({
+    port: 3000,
+    cluster: true
+}, function(cb) {
+    cb(app);
+});

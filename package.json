@@ -1,0 +1,19 @@
+{
+    "author": " <subbu@ebaysf.com>",
+    "name": "ebay-srp",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/s3u/ebay-srp-nodejs.git"
+    },
+    "dependencies": {
+        "express": "",
+        "ejs": "",
+        "cluster2": ""
+    },
+    "devDependencies": {},
+    "optionalDependencies": {},
+    "engines": {
+        "node": "*"
+    }
+}

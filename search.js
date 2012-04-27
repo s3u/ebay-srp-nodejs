@@ -69,10 +69,20 @@ app.get('/', function(req, res) {
 // Start a cluster
 // app.listen(3000);
 
-var cluster2 = require('cluster2');
-cluster2.listen({
+var Cluster = require('cluster2');
+
+var c = new Cluster({
     port: 3000,
     cluster: true
-}, function(cb) {
+});
+
+c.on('died', function(pid) {
+    console.log('Worker ' + pid + ' died');
+});
+c.on('forked', function(pid) {
+    console.log('Worker ' + pid + ' forked');
+});
+
+c.listen(function(cb) {
     cb(app);
 });
